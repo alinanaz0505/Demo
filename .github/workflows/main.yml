@@ -18,7 +18,9 @@ jobs:
 
       - name: Make changes
         run: |
-          echo "$(date)" > last_update.txt
+          # Set the timezone to Asia/Kolkata (Indian Standard Time)
+          export TZ=Asia/Kolkata
+          echo "$(date)" > last_update.txt  # Get the current date and time in IST
 
       - name: Commit and push changes
         run: |
